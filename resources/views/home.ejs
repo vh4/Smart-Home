@@ -1,0 +1,295 @@
+<style>
+	TML CSSResult Skip Results Iframe
+	*, *:before, *:after {
+	  box-sizing: border-box;
+	  margin: 0;
+	  padding: 0;
+	}
+	.l {
+	  font-size: 1.2em;
+	  line-height: 1;
+	}
+	
+	.l {
+	  background-color: rgba(0,0,0,0.7);
+	  border-radius: 0.75em;
+	  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
+	  color: #fdea7b;
+	  display: inline-flex;
+	  align-items: center;
+	  margin: auto;
+	  padding: 0.15em;
+	  width: 3em;
+	  height: 1.5em;
+	  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+	  -webkit-appearance: none;
+	  -moz-appearance: none;
+	  appearance: none;
+	}
+	.l:before, .l:after {
+	  content: "";
+	  display: block;
+	}
+	.l:before {
+	  background-color: #d7d7d7;
+	  border-radius: 50%;
+	  width: 1.2em;
+	  height: 1.2em;
+	  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	  z-index: 1;
+	}
+	.l:after {
+	  background:
+		linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
+		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
+		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
+	  background-repeat: no-repeat;
+	  border: 0.25em solid transparent;
+	  border-left: 0.4em solid #d8d8d8;
+	  border-right: 0 solid transparent;
+	  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	  transform: translateX(-22.5%);
+	  transform-origin: 25% 50%;
+	  width: 1.2em;
+	  height: 1em;
+	}
+	/* Checked */
+	.l:checked {
+	  background-color: rgba(0,0,0,0.45);
+	  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
+	}
+	.l:checked:before {
+	  background-color: currentColor;
+	  transform: translateX(125%)
+	}
+	.l:checked:after {
+	  border-left-color: currentColor;
+	  transform: translateX(-2.5%) rotateY(180deg);
+	}
+	/* Other States */
+	.l:focus {
+	  /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+	  outline: 0;
+	}
+</style>
+<div class="wrapper">
+	<div class="main-header">
+		<!-- Logo Header -->
+		<div class="logo-header" data-background-color="blue">
+			<a class="logo"style="color:white">
+				<img src="merahh.png" width="80px" alt="">   IoT Dev
+			</a>
+			<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">
+					<i class="icon-menu"></i>
+				</span>
+			</button>
+			<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+			<div class="nav-toggle">
+				<button class="btn btn-toggle toggle-sidebar">
+					<i class="icon-menu"></i>
+				</button>
+			</div>
+		</div>
+		<!-- End Logo Header -->
+
+		<!-- Navbar Header -->
+		<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+			
+			<div class="container-fluid">
+				<div class="collapse" id="search-nav">
+					<form class="navbar-left navbar-form nav-search mr-md-3">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<button type="submit" class="btn btn-search pr-1">
+									<i class="fa fa-search search-icon"></i>
+								</button>
+							</div>
+							<input type="text" placeholder="Search ..." class="form-control">
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<!-- End Navbar -->
+	</div>
+
+	<!-- Sidebar -->
+	<div class="sidebar sidebar-style-2">			
+		<div class="sidebar-wrapper scrollbar scrollbar-inner">
+			<div class="sidebar-content">
+				<div class="user">
+					<div class="avatar-sm float-left mr-2">
+						<img src="<%= user.image %>" alt="..." class="avatar-img rounded-circle">
+					</div>
+					<div class="info">
+						<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<span>
+								<%= user.nama %> 
+								<span class="user-level">Web Developer</span>
+								<span class="caret"></span>
+							</span>
+						</a>
+						<div class="clearfix"></div>
+
+						<div class="collapse in" id="collapseExample">
+							<ul class="nav">
+								<li>
+									<a href="#profile">
+										<span class="link-collapse">My Profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="#edit">
+										<span class="link-collapse">Edit Profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="#settings">
+										<span class="link-collapse">Settings</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<ul class="nav nav-primary">
+					<li class="nav-item active">
+						<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+							<i class="fas fa-home"></i>
+							<p>Dashboard</p>
+							<span class="caret"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav nav-primary">
+				<li class="nav-item">
+					<a href="/home/logout">
+						<i class="fas fa-sign-out-alt"></i>
+						<p>Logout</p>
+					</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<!-- End Sidebar -->`
+
+	<div class="main-panel">
+		<div class="content">
+			<br>
+				<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col">
+							<div class="card bg-c-yellow order-card">
+								<div class="card-block">
+									<h6 class="m-b-10">TEMPERATURE</h6>
+									<h2 class="text-right"><span id="tem">486</span></h2>
+
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card bg-c-green order-card">
+								<div class="card-block">
+									<h6 class="m-b-10">HUMMIDITY</h6>
+									<h2 class="text-right"><span id="hum">486</span></h2>
+
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card bg-c-pink order-card">
+								<div class="card-block">
+									<h6 class="m-b-10">PRESSURE</h6>
+									<h2 class="text-right"><span id="pre">486</span></h2>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4 text-center">
+							<div id="grafiktemperature"></div>
+						</div>
+							<div class="col-md-8 text-center">
+								Kamar Tidur <img src="lampu.png" width="70px"> <input id="kamar_tidur" class="l" type="checkbox">
+								Kamar Mandi <img src="lampu.png" width="70px"> <input id="kamar_mandi" class="l" type="checkbox">
+									Ruangan <img src="lampu.png" width="70px"> <input id="ruangan" class="l" type="checkbox">
+									Pintu <img src="pintu.png" width="70px"> <input id="pintu" class="l" type="checkbox">
+								<div id="coordinate" style=" width:100%; height:250px;"> </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 text-center">
+								<div id="grafikpressure"></div>
+							</div>
+							<div class="col-md-6 text-center">
+								<div id="hummygrafik"></div>
+							</div>
+						</div>
+						<body>
+						</div>
+				</div>
+
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright">
+					@2021 made with <i class="fa fa-heart heart text-primary"> Tony</i> 
+				</div>				
+			</div>
+		</footer>	
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyA8xCRezPCuvKbWgbWQunxLieJhwUpdxbQ",
+    authDomain: "project-iot-64868.firebaseapp.com",
+    databaseURL: "https://project-iot-64868-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "project-iot-64868",
+    storageBucket: "project-iot-64868.appspot.com",
+    messagingSenderId: "425524011584",
+    appId: "1:425524011584:web:b6d4229e04d8f3fc95b5a5",
+    measurementId: "G-SXE8HN51ZK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ4Q-_nLQuIVEMk-fD_g4NQX6PB406i4U"></script>
+<script src="/js/highstock.js"></script>
+<script src="/js/exporting.js"></script>
+<script src="/js/export-data.js"></script>
+<script src="/vendor/Highcharts-6.0.7/code/highcharts.js"></script>
+<script src="/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/sketch.js"></script>
+<script src="https://unpkg.com/ml5@0.4.2/dist/ml5.min.js"></script>
+
+
+<!--   Core JS Files   -->
+<script src="/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="/assets/js/core/popper.min.js"></script>
+<script src="/assets/js/core/bootstrap.min.js"></script>
+<!-- jQuery UI -->
+<script src="/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<!-- jQuery Scrollbar -->
+<script src="/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<!-- Chart JS -->
+<script src="/assets/js/plugin/chart.js/chart.min.js"></script>
+<!-- jQuery Sparkline -->
+<script src="/assets/js/atlantis.min.js"></script>
+<!-- Atlantis DEMO methods, don't include it in your project! -->
+<script src="/assets/js/setting-demo.js"></script>
+<script src="/assets/js/demo.js"></script>
+<script defer src="/databases.js"></script>
