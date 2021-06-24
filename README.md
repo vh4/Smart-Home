@@ -1,6 +1,6 @@
-# Description IoT Project 
+# Description IoT  
 
-Project IoT Smart Home : https://iot-tubes01.herokuapp.com/
+Project IoT Smart Home Website : https://iot-tubes01.herokuapp.com/
 
 ### How to install 
 - 1 git clone https://github.com/vh4/IoT
