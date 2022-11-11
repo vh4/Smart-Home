@@ -13,7 +13,7 @@ const session  = require('express-session')
 const mongostore = require('connect-mongo')(session)
 const mongoose = require('mongoose')
 require('./app/middleware/passport')(passport)
-const url = 'mongodb+srv://tony:tony201m@cluster0.xmhqk.mongodb.net/IoT?retryWrites=true&w=majority'
+const url = 'mongodb+srv://tony:xxxxx@cluster0.xmhqk.mongodb.net/IoT?retryWrites=true&w=majority'
 
 app.use(session({
     secret: 'secret',
